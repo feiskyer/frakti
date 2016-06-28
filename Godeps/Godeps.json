@@ -1,0 +1,87 @@
+{
+	"ImportPath": "k8s.io/frakti",
+	"GoVersion": "go1.6",
+	"GodepVersion": "v62",
+	"Deps": [
+		{
+			"ImportPath": "github.com/coreos/go-semver/semver",
+			"Comment": "v0.1.0",
+			"Rev": "294930c1e79c64e7dbe360054274fdad492c8cf5"
+		},
+		{
+			"ImportPath": "github.com/gogo/protobuf/proto",
+			"Comment": "v0.1-125-g82d16f7",
+			"Rev": "82d16f734d6d871204a3feb1a73cb220cc92574c"
+		},
+		{
+			"ImportPath": "github.com/golang/glog",
+			"Rev": "fca8c8854093a154ff1eb580aae10276ad6b1b5f"
+		},
+		{
+			"ImportPath": "github.com/golang/protobuf/proto",
+			"Rev": "9e6977f30c91c78396e719e164e57f9287fff42c"
+		},
+		{
+			"ImportPath": "github.com/hyperhq/hyperd/types",
+			"Comment": "v0.6.0-87-g841d883",
+			"Rev": "841d883e906156cf4ff27fc963c5943e87b481fc"
+		},
+		{
+			"ImportPath": "golang.org/x/net/context",
+			"Rev": "ea47fc708ee3e20177f3ca3716217c4ab75942cb"
+		},
+		{
+			"ImportPath": "golang.org/x/net/http2",
+			"Rev": "ea47fc708ee3e20177f3ca3716217c4ab75942cb"
+		},
+		{
+			"ImportPath": "golang.org/x/net/http2/hpack",
+			"Rev": "ea47fc708ee3e20177f3ca3716217c4ab75942cb"
+		},
+		{
+			"ImportPath": "golang.org/x/net/internal/timeseries",
+			"Rev": "ea47fc708ee3e20177f3ca3716217c4ab75942cb"
+		},
+		{
+			"ImportPath": "golang.org/x/net/trace",
+			"Rev": "ea47fc708ee3e20177f3ca3716217c4ab75942cb"
+		},
+		{
+			"ImportPath": "google.golang.org/grpc",
+			"Rev": "933601d8cd6418a8a891bd9075a7161b0a67badb"
+		},
+		{
+			"ImportPath": "google.golang.org/grpc/codes",
+			"Rev": "933601d8cd6418a8a891bd9075a7161b0a67badb"
+		},
+		{
+			"ImportPath": "google.golang.org/grpc/credentials",
+			"Rev": "933601d8cd6418a8a891bd9075a7161b0a67badb"
+		},
+		{
+			"ImportPath": "google.golang.org/grpc/grpclog",
+			"Rev": "933601d8cd6418a8a891bd9075a7161b0a67badb"
+		},
+		{
+			"ImportPath": "google.golang.org/grpc/metadata",
+			"Rev": "933601d8cd6418a8a891bd9075a7161b0a67badb"
+		},
+		{
+			"ImportPath": "google.golang.org/grpc/naming",
+			"Rev": "933601d8cd6418a8a891bd9075a7161b0a67badb"
+		},
+		{
+			"ImportPath": "google.golang.org/grpc/peer",
+			"Rev": "933601d8cd6418a8a891bd9075a7161b0a67badb"
+		},
+		{
+			"ImportPath": "google.golang.org/grpc/transport",
+			"Rev": "933601d8cd6418a8a891bd9075a7161b0a67badb"
+		},
+		{
+			"ImportPath": "k8s.io/kubernetes/pkg/kubelet/api/v1alpha1/runtime",
+			"Comment": "v1.4.0-alpha.0-1137-gba91362",
+			"Rev": "ba913629fe2be1257f8da9712f56acb458e23500"
+		}
+	]
+}
