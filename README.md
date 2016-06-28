@@ -1,6 +1,6 @@
 # Frakti
 
-[![GoDoc](https://godoc.org/k8s.io/frakti?status.svg)](https://godoc.org/k8s.io/frakti)
+[![GoDoc](https://godoc.org/k8s.io/frakti?status.svg)](https://godoc.org/k8s.io/frakti) [![Build Status](https://travis-ci.org/kubernetes/frakti.svg?branch=master)](https://travis-ci.org/kubernetes/frakti)
 
 ## The hypervisor-based container runtime for Kubernetes
 
@@ -14,13 +14,33 @@ Frakti serves as a kubelet container runtime API server. Its endpoint should be 
 
 ## QuickStart
 
-### Install
+Build frakti:
 
-TODO
+```sh
+mkdir -p $GOPATH/src/k8s.io
+git clone https://github.com/kubernetes/frakti.git $GOPATH/src/k8s.io/frakti
+cd $GOPATH/src/k8s.io/frakti
+make && make install
+```
 
-### Start
+Start hyperd with gRPC endpoint `127.0.0.1:22318`:
 
-TODO
+```sh
+$ grep gRPC /etc/hyper/config
+gRPCHost=127.0.0.1:22318
+```
+
+Then start frakti:
+
+```sh
+frakti -v=3 --logtostderr --listen=127.0.0.1:10238 --hyper-endpoint=127.0.0.1:22318
+```
+
+Finaaly, start kubelet with frakti
+
+```sh
+kubelet --container-runtime-endpoint=127.0.0.1:10238 ...
+```
 
 ## Documentation
 
