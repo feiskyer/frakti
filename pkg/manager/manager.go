@@ -199,7 +199,7 @@ func (s *KubeHyperManager) StopPodSandbox(ctx context.Context, req *kubeapi.Stop
 
 	code, cause, err := s.client.StopPod(req.GetPodSandboxId())
 	if err != nil {
-		glog.Errorf("Remove pod %s failed, code: %d, cause: %s, error: %v", req.GetPodSandboxId(), code, cause, err)
+		glog.Errorf("Stop pod %s failed, code: %d, cause: %s, error: %v", req.GetPodSandboxId(), code, cause, err)
 		return nil, err
 	}
 
