@@ -207,14 +207,14 @@ func (h *HyperRuntime) PodSandboxStatus(podSandBoxID string) (*kubeapi.PodSandbo
 }
 
 // ListPodSandbox returns a list of SandBox.
-func (h *HyperRuntime) ListPodSandbox(filter *kubeapi.PodSandboxFilter) ([]*kubeapi.PodSandboxListItem, error) {
+func (h *HyperRuntime) ListPodSandbox(filter *kubeapi.PodSandboxFilter) ([]*kubeapi.PodSandbox, error) {
 	pods, err := h.client.GetPodList()
 	if err != nil {
 		glog.Errorf("GetPodList failed: %v", err)
 		return nil, err
 	}
 
-	items := make([]*kubeapi.PodSandboxListItem, 0, len(pods))
+	items := make([]*kubeapi.PodSandbox, 0, len(pods))
 	for _, pod := range pods {
 		state := toPodSandboxState(pod.Status)
 
@@ -237,7 +237,7 @@ func (h *HyperRuntime) ListPodSandbox(filter *kubeapi.PodSandboxFilter) ([]*kube
 			continue
 		}
 
-		items = append(items, &kubeapi.PodSandboxListItem{
+		items = append(items, &kubeapi.PodSandbox{
 			Id:        &pod.PodID,
 			Name:      &pod.PodName,
 			Labels:    pod.Labels,

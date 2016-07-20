@@ -28,23 +28,27 @@
 		},
 		{
 			"ImportPath": "golang.org/x/net/context",
-			"Rev": "ea47fc708ee3e20177f3ca3716217c4ab75942cb"
+			"Rev": "b400c2eff1badec7022a8c8f5bea058b6315eed7"
 		},
 		{
 			"ImportPath": "golang.org/x/net/http2",
-			"Rev": "ea47fc708ee3e20177f3ca3716217c4ab75942cb"
+			"Rev": "b400c2eff1badec7022a8c8f5bea058b6315eed7"
 		},
 		{
 			"ImportPath": "golang.org/x/net/http2/hpack",
-			"Rev": "ea47fc708ee3e20177f3ca3716217c4ab75942cb"
+			"Rev": "b400c2eff1badec7022a8c8f5bea058b6315eed7"
 		},
 		{
 			"ImportPath": "golang.org/x/net/internal/timeseries",
-			"Rev": "ea47fc708ee3e20177f3ca3716217c4ab75942cb"
+			"Rev": "b400c2eff1badec7022a8c8f5bea058b6315eed7"
+		},
+		{
+			"ImportPath": "golang.org/x/net/lex/httplex",
+			"Rev": "b400c2eff1badec7022a8c8f5bea058b6315eed7"
 		},
 		{
 			"ImportPath": "golang.org/x/net/trace",
-			"Rev": "ea47fc708ee3e20177f3ca3716217c4ab75942cb"
+			"Rev": "b400c2eff1badec7022a8c8f5bea058b6315eed7"
 		},
 		{
 			"ImportPath": "google.golang.org/grpc",
@@ -80,8 +84,8 @@
 		},
 		{
 			"ImportPath": "k8s.io/kubernetes/pkg/kubelet/api/v1alpha1/runtime",
-			"Comment": "v1.4.0-alpha.0-1137-gba91362",
-			"Rev": "ba913629fe2be1257f8da9712f56acb458e23500"
+			"Comment": "v1.4.0-alpha.1-485-gad7ecec",
+			"Rev": "ad7ececcd0a3b1772a3c45eb1133fcbbf1d183fb"
 		}
 	]
 }

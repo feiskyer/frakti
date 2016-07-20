@@ -31,8 +31,8 @@ const (
 
 var (
 	version = flag.Bool("version", false, "Print version and exit")
-	listen  = flag.String("listen", "127.0.0.1:10238",
-		"Which port to listen on, e.g. 127.0.0.1:10238")
+	listen  = flag.String("listen", "/var/run/frakti.sock",
+		"The sockets to listen on, e.g. /var/run/frakti.sock")
 	hyperEndpoint = flag.String("hyper-endpoint", "127.0.0.1:22318",
 		"The endpoint for connecting hyperd, e.g. 127.0.0.1:22318")
 )

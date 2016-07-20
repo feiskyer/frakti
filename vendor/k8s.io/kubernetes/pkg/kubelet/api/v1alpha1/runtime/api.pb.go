@@ -49,7 +49,7 @@ It has these top-level messages:
 	PodSandboxStatusResponse
 	PodSandboxFilter
 	ListPodSandboxRequest
-	PodSandboxListItem
+	PodSandbox
 	ListPodSandboxResponse
 	ImageSpec
 	KeyValue
@@ -968,8 +968,8 @@ func (m *ListPodSandboxRequest) GetFilter() *PodSandboxFilter {
 	return nil
 }
 
-// PodSandboxListItem contains minimal information about a sandbox.
-type PodSandboxListItem struct {
+// PodSandbox contains minimal information about a sandbox.
+type PodSandbox struct {
 	// The id of the PodSandbox
 	Id *string `protobuf:"bytes,1,opt,name=id" json:"id,omitempty"`
 	// The name of the PodSandbox
@@ -983,39 +983,39 @@ type PodSandboxListItem struct {
 	XXX_unrecognized []byte            `json:"-"`
 }
 
-func (m *PodSandboxListItem) Reset()         { *m = PodSandboxListItem{} }
-func (m *PodSandboxListItem) String() string { return proto.CompactTextString(m) }
-func (*PodSandboxListItem) ProtoMessage()    {}
+func (m *PodSandbox) Reset()         { *m = PodSandbox{} }
+func (m *PodSandbox) String() string { return proto.CompactTextString(m) }
+func (*PodSandbox) ProtoMessage()    {}
 
-func (m *PodSandboxListItem) GetId() string {
+func (m *PodSandbox) GetId() string {
 	if m != nil && m.Id != nil {
 		return *m.Id
 	}
 	return ""
 }
 
-func (m *PodSandboxListItem) GetName() string {
+func (m *PodSandbox) GetName() string {
 	if m != nil && m.Name != nil {
 		return *m.Name
 	}
 	return ""
 }
 
-func (m *PodSandboxListItem) GetState() PodSandBoxState {
+func (m *PodSandbox) GetState() PodSandBoxState {
 	if m != nil && m.State != nil {
 		return *m.State
 	}
 	return PodSandBoxState_READY
 }
 
-func (m *PodSandboxListItem) GetCreatedAt() int64 {
+func (m *PodSandbox) GetCreatedAt() int64 {
 	if m != nil && m.CreatedAt != nil {
 		return *m.CreatedAt
 	}
 	return 0
 }
 
-func (m *PodSandboxListItem) GetLabels() map[string]string {
+func (m *PodSandbox) GetLabels() map[string]string {
 	if m != nil {
 		return m.Labels
 	}
@@ -1023,16 +1023,16 @@ func (m *PodSandboxListItem) GetLabels() map[string]string {
 }
 
 type ListPodSandboxResponse struct {
-	// List of PodSandboxListItem
-	Items            []*PodSandboxListItem `protobuf:"bytes,1,rep,name=items" json:"items,omitempty"`
-	XXX_unrecognized []byte                `json:"-"`
+	// List of PodSandbox
+	Items            []*PodSandbox `protobuf:"bytes,1,rep,name=items" json:"items,omitempty"`
+	XXX_unrecognized []byte        `json:"-"`
 }
 
 func (m *ListPodSandboxResponse) Reset()         { *m = ListPodSandboxResponse{} }
 func (m *ListPodSandboxResponse) String() string { return proto.CompactTextString(m) }
 func (*ListPodSandboxResponse) ProtoMessage()    {}
 
-func (m *ListPodSandboxResponse) GetItems() []*PodSandboxListItem {
+func (m *ListPodSandboxResponse) GetItems() []*PodSandbox {
 	if m != nil {
 		return m.Items
 	}
@@ -2220,7 +2220,7 @@ func init() {
 	proto.RegisterType((*PodSandboxStatusResponse)(nil), "runtime.PodSandboxStatusResponse")
 	proto.RegisterType((*PodSandboxFilter)(nil), "runtime.PodSandboxFilter")
 	proto.RegisterType((*ListPodSandboxRequest)(nil), "runtime.ListPodSandboxRequest")
-	proto.RegisterType((*PodSandboxListItem)(nil), "runtime.PodSandboxListItem")
+	proto.RegisterType((*PodSandbox)(nil), "runtime.PodSandbox")
 	proto.RegisterType((*ListPodSandboxResponse)(nil), "runtime.ListPodSandboxResponse")
 	proto.RegisterType((*ImageSpec)(nil), "runtime.ImageSpec")
 	proto.RegisterType((*KeyValue)(nil), "runtime.KeyValue")

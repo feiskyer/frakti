@@ -295,8 +295,8 @@ message ListPodSandboxRequest {
 }
 
 
-// PodSandboxListItem contains minimal information about a sandbox.
-message PodSandboxListItem {
+// PodSandbox contains minimal information about a sandbox.
+message PodSandbox {
     // The id of the PodSandbox
     optional string id = 1;
     // The name of the PodSandbox
@@ -310,8 +310,8 @@ message PodSandboxListItem {
 }
 
 message ListPodSandboxResponse {
-    // List of PodSandboxListItem
-    repeated PodSandboxListItem items = 1;
+    // List of PodSandbox
+    repeated PodSandbox items = 1;
 }
 
 // ImageSpec is an internal representation of an image.  Currently, it wraps the

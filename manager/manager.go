@@ -19,10 +19,13 @@ package manager
 import (
 	"fmt"
 	"net"
+	"os"
+	"syscall"
 
 	"github.com/golang/glog"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
+	"k8s.io/frakti/runtime"
 	kubeapi "k8s.io/kubernetes/pkg/kubelet/api/v1alpha1/runtime"
 )
 
@@ -36,12 +39,12 @@ type FraktiManager struct {
 	// The grpc server.
 	server *grpc.Server
 
-	runtimeService RuntimeService
-	imageService   ImageService
+	runtimeService runtime.RuntimeService
+	imageService   runtime.ImageService
 }
 
 // NewFraktiManager creates a new FraktiManager
-func NewFraktiManager(runtimeService RuntimeService, imageService ImageService) (*FraktiManager, error) {
+func NewFraktiManager(runtimeService runtime.RuntimeService, imageService runtime.ImageService) (*FraktiManager, error) {
 	s := &FraktiManager{
 		server:         grpc.NewServer(),
 		runtimeService: runtimeService,
@@ -52,16 +55,21 @@ func NewFraktiManager(runtimeService RuntimeService, imageService ImageService) 
 	return s, nil
 }
 
-// Serve starts gRPC server at tcp://addr
+// Serve starts gRPC server at unix://addr
 func (s *FraktiManager) Serve(addr string) error {
 	glog.V(1).Infof("Start frakti at %s", addr)
 
-	lis, err := net.Listen("tcp", addr)
+	if err := syscall.Unlink(addr); err != nil && !os.IsNotExist(err) {
+		return err
+	}
+
+	lis, err := net.Listen("unix", addr)
 	if err != nil {
 		glog.Fatalf("Failed to listen %s: %v", addr, err)
 		return err
 	}
 
+	defer lis.Close()
 	return s.server.Serve(lis)
 }
 

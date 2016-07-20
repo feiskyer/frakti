@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package manager
+package runtime
 
 import (
 	"io"
@@ -40,7 +40,7 @@ type RuntimeService interface {
 	// PodSandboxStatus returns the Status of the PodSandbox.
 	PodSandboxStatus(podSandBoxID string) (*runtimeApi.PodSandboxStatus, error)
 	// ListPodSandbox returns a list of SandBox.
-	ListPodSandbox(filter *runtimeApi.PodSandboxFilter) ([]*runtimeApi.PodSandboxListItem, error)
+	ListPodSandbox(filter *runtimeApi.PodSandboxFilter) ([]*runtimeApi.PodSandbox, error)
 	// CreateContainer creates a new container in specified PodSandbox
 	CreateContainer(podSandBoxID string, config *runtimeApi.ContainerConfig, sandboxConfig *runtimeApi.PodSandboxConfig) (string, error)
 	// StartContainer starts the container.
